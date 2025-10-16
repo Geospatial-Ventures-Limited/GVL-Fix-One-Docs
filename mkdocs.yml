@@ -1,0 +1,4 @@
+site_name: GVL Fix One User Manual
+theme: material
+markdown_extensions:
+  - admonition
