@@ -1,4 +1,4 @@
-# GVL Fix One: Change Configuration
+# Communication Methods Configuration
 
 `GVL Fix One` reads from **configuration files** at startup to determine what to do.
 
@@ -60,9 +60,9 @@ Add (or edit) the following lines:
 
 ```
 comm_type=1
-cell_apn=eapn1.net (optional, delete this if unused)
-cell_pap_username=Geospati (optional, delete this if unused)
-cell_pap_password=Geospati (optional, delete this if unused)
+cell_apn=eapn1.net (optional, delete if unused)
+cell_pap_username=Geospati (optional, delete if unused)
+cell_pap_password=Geospati (optional, delete if unused)
 ```
 
 * Make sure **there are no space before or after `=`**
