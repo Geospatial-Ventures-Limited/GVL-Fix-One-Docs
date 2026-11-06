@@ -1,11 +1,8 @@
 # Home
 
-!!! note
-    * Under construction, more details to come!
-
 ## Overview
 
-`GVL Fix One` is a high-accuracy RTK GNSS receiver for handheld or static installations.
+`GVL Fix One` is a high-accuracy RTK GNSS receiver for handheld or static applications.
 
 * Centimetre-level CEP real time, millimetre-level with postpocessing.
 

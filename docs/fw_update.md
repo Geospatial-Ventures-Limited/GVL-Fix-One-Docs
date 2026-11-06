@@ -1,8 +1,5 @@
 # Firmware Update
 
-!!! note
-    * Under construction, more details to come!
-
 * Plug the device into a computer
 
 * Immediately after powering on, **press any key** 
@@ -16,5 +13,5 @@
 * Hold power button to turn off then on again
 
 * Wait for update to finish
-	* It will reboot itself when done
+	* It will self-reboot when done
 	* Should take around 10-20 seconds

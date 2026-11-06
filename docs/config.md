@@ -1,9 +1,6 @@
 # Configuration
 
-!!! note
-    * Under construction, more details to come!
-
-`GVL Fix One` reads from **configuration files** at startup to determine what to do.
+`GVL Fix One` reads from a **configuration file** at startup to determine what to do.
 
 ## Accessing Storage
 
@@ -11,7 +8,7 @@
 
 * Hold power button to switch on
 
-* On the boot screen, **press any key**.
+* On boot screen, **press any key**.
 
 * A **USB drive** should show up on the computer
 
@@ -19,7 +16,7 @@
 
 All files are stored at the **root of the SD card**.
 
-* **Configuration File**: `gvl_config.txt` 
+* **Configuration File**: `gvl_config.txt`
 
 * **MQTT over TLS**: Put the server CA certificate as `mqtt.crt`
 
@@ -42,28 +39,39 @@ wifi_pass=hunter2
 // 0: Rover, 1: Basestation
 device_role=0
 
-// 0: Wi-Fi, 1: Cellular, others: No Comm.
+// 0: Wi-Fi, 1: Cellular, 2: No Comm.
 comm_type=0
 
-// needed for some virtual mountpoints
 send_gga=1
 use_mqtt=1
 log_sd=0
+
+// Rover fix rate in Hz (1, 2, 5, or 10)
+rover_refresh_rate=1
 
 ntrip_addr=ntrip.data.gnss.ga.gov.au
 ntrip_port=2101
 ntrip_cred=username:password
 ntrip_mountpoint=AUTO
 
+// Restart NTRIP if no data for this many seconds (0 to disable)
+ntrip_reboot_sec=240
+
 mqtt_addr=test.mosquitto.org
 mqtt_port=1883
 mqtt_username=username
 mqtt_password=password
+
+// Cellular settings (used when comm_type=1)
+cell_apn=internet
+cell_pap_username=user
+cell_pap_password=pass
+iotopmode=0
 ```
 
 * Make sure **there are no space before or after `=`**
 
-* Omitted options are 0 (or empty string) by default
+* If an option is not present in the file, its value defaults to **0** (for integers) or an **empty string** (for text)
 
 ### device_role
 
@@ -95,7 +103,7 @@ mqtt_password=password
 
 * 1: Use Cellular for network connection
 
-* Any other: No comms, won't connect to networks.
+* 2: No comms, won't connect to networks.
 
 ### `wifi_ssid`
 
@@ -157,7 +165,7 @@ mqtt_password=password
 
 * Whether or not to send NMEA GGA sentence to NTRIP server in rover mode
 
-* Required by some NTRIP servers to select a suitable basestation
+* Required by some NTRIP servers to select a suitable correction source
 
 ### `base_password`
 
@@ -242,14 +250,93 @@ base_z=687452.299
 
 * Whether or not to save GNSS result to SD card
 
-### enable_rtcm
+### rover_rtcm
 
 |  Type  | Example |
 |:------:|---------|
-| Integer | `enable_rtcm=0` |
+| Integer | `rover_rtcm=1` |
 
-* Whether or not to enable RTCM MSM7 output in rover mode
+* Enable RTCM MSM7 output in rover mode
 
 * Useful for postprocessing
 
-* Under development
+    * 0: Disabled
+
+    * 1: Enable RTCM output and stream it to the NTRIP caster
+
+    * 2: Enable RTCM output and save to SD card only (skips the network connection)
+
+### rover_refresh_rate
+
+|  Type  | Example |
+|:------:|---------|
+| Integer | `rover_refresh_rate=1` |
+
+* Rover position fix rate in Hz
+
+* Valid values: `1`, `2`, `5`, `10`.
+
+### ntrip_reboot_sec
+
+|  Type  | Example |
+|:------:|---------|
+| Integer | `ntrip_reboot_sec=240` |
+
+* Reboot device fi no NTRIP correction data is received for this many seconds
+
+* Default: `240`
+
+* Set to `0` to disable
+
+### enable_imu
+
+|  Type  | Example |
+|:------:|---------|
+| Integer | `enable_imu=1` |
+
+* Enable raw IMU output on the GNSS module
+
+## Cellular Options
+
+These options apply when `comm_type=1` (Cellular).
+
+### `cell_apn`
+
+|  Type  | Example |
+|:------:|---------|
+| String | `cell_apn=internet` |
+
+* Access Point Name (APN) for the cellular carrier
+
+### `cell_pap_username`
+
+|  Type  | Example |
+|:------:|---------|
+| String | `cell_pap_username=user` |
+
+* PAP username for the cellular connection
+
+* Optional, depends on carrier
+
+### `cell_pap_password`
+
+|  Type  | Example |
+|:------:|---------|
+| String | `cell_pap_password=pass` |
+
+* PAP password for the cellular connection
+
+* Optional, depends on carrier
+
+### iotopmode
+
+|  Type  | Example |
+|:------:|---------|
+| Integer | `iotopmode=0` |
+
+* 0: LTE Cat M1
+
+* 1: NB-IoT
+
+* 2: Both
+
