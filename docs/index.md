@@ -6,11 +6,11 @@
 
 * Centimetre-level CEP real time, millimetre-level with postpocessing.
 
-* Dual-role Basestation and Rover
-
 * NTRIP transmit and receive
 
-* MQTT real time telemetry
+* MQTT real-time telemetry
+
+* One-click survey point capture
 
 ## Getting Started
 
