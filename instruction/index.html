@@ -214,28 +214,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../comm_config/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Communication Methods Configuration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../config/" class="md-nav__link">
         
   
@@ -357,42 +335,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#status-leds" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Status LEDs
+      Configuration
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Status LEDs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gnss-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      GNSS Status
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comm-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comm Status
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#firmware-update" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Firmware Update
     </span>
   </a>
   
@@ -460,42 +414,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#status-leds" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Status LEDs
+      Configuration
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Status LEDs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gnss-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      GNSS Status
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comm-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comm Status
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#firmware-update" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Firmware Update
     </span>
   </a>
   
@@ -522,15 +452,51 @@
 <p><img alt="alt_text" src="../legends.png" /></p>
 <h2 id="usage">Usage</h2>
 <ul>
+<li>If not already done, <a href="../config/">configure your device</a>.</li>
 <li><strong>Press and hold</strong> power button for 2 seconds<ul>
 <li>Device turns on and boots into main screen</li>
 </ul>
 </li>
-<li>Wait until GNSS Status LED turns <strong>green</strong><ul>
-<li>Green = RTK Fixed. Highest precision.</li>
 <li>Ensure open sky above antenna.</li>
+<li>Observe GNSS Status LED</li>
 </ul>
-</li>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>State</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>No fix</td>
+<td>No position yet</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>Single fix</td>
+<td>Standalone GNSS, ~3–10 m</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>DGNSS</td>
+<td>Differential, ~0.5–3 m</td>
+</tr>
+<tr>
+<td>Purple</td>
+<td>RTK Float</td>
+<td>Converging, ~0.1–1 m</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>RTK Fixed</td>
+<td>Highest precision, ~1–2 cm</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Real-time telemetry is streamed to GVL Dashboard.</li>
 </ul>
 <h2 id="additional-features">Additional Features</h2>
@@ -543,74 +509,10 @@
 </li>
 <li><strong>Press and hold</strong> <code>Power</code> button to switch off</li>
 </ul>
-<h2 id="status-leds">Status LEDs</h2>
-<h3 id="gnss-status">GNSS Status</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Colour</th>
-<th style="text-align: center;">Notes</th>
-<th style="text-align: center;">Accuracy (CEP)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Red</td>
-<td style="text-align: center;">No Signal</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: center;">Yellow</td>
-<td style="text-align: center;">Single</td>
-<td style="text-align: center;">2-5 m</td>
-</tr>
-<tr>
-<td style="text-align: center;">Blue</td>
-<td style="text-align: center;">Differential</td>
-<td style="text-align: center;">0.5-2 m</td>
-</tr>
-<tr>
-<td style="text-align: center;">Purple</td>
-<td style="text-align: center;">RTK Float</td>
-<td style="text-align: center;">0.2-1 m</td>
-</tr>
-<tr>
-<td style="text-align: center;">Green</td>
-<td style="text-align: center;">RTK Fixed</td>
-<td style="text-align: center;">1-3 <strong>cm</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;">White</td>
-<td style="text-align: center;">Basestation<br>Mode</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="comm-status">Comm Status</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Colour</th>
-<th style="text-align: center;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Green</td>
-<td style="text-align: center;">Wi-Fi</td>
-</tr>
-<tr>
-<td style="text-align: center;">Blue</td>
-<td style="text-align: center;">Cellular</td>
-</tr>
-<tr>
-<td style="text-align: center;">White</td>
-<td style="text-align: center;">Unconfigured</td>
-</tr>
-</tbody>
-</table>
 <h2 id="configuration">Configuration</h2>
 <p>See the <a href="../config/">Configuration Page</a> on how to set up your device.</p>
+<h2 id="firmware-update">Firmware Update</h2>
+<p>See the <a href="../fw_update/">Firmware Update</a></p>
 
 
 

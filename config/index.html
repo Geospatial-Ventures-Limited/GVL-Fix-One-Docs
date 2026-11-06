@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../comm_config/">
+        <link rel="prev" href="..">
       
       
         <link rel="next" href="../fw_update/">
@@ -200,28 +200,6 @@
   
   <span class="md-ellipsis">
     Home
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../comm_config/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Communication Methods Configuration
     
   </span>
   
@@ -974,7 +952,7 @@
 <p>Hold power button to switch on</p>
 </li>
 <li>
-<p>On boot screen, <strong>press any key</strong>.</p>
+<p>On boot screen, <strong>press any button</strong>.</p>
 </li>
 <li>
 <p>A <strong>USB drive</strong> should show up on the computer</p>
@@ -983,12 +961,9 @@
 <h2 id="files">Files</h2>
 <p>All files are stored at the <strong>root of the SD card</strong>.</p>
 <ul>
-<li>
-<p><strong>Configuration File</strong>: <code>gvl_config.txt</code></p>
-</li>
-<li>
-<p><strong>MQTT over TLS</strong>: Put the server CA certificate as <code>mqtt.crt</code></p>
-<ul>
+<li><strong>Configuration File</strong>: <code>gvl_config.txt</code></li>
+<li><strong>MQTT over TLS</strong><ul>
+<li>Put the server CA certificate as <code>mqtt.crt</code></li>
 <li>Not needed for unencrypted MQTT</li>
 </ul>
 </li>
@@ -1012,7 +987,6 @@ comm_type=0
 
 send_gga=1
 use_mqtt=1
-log_sd=0
 
 // Rover fix rate in Hz (1, 2, 5, or 10)
 rover_refresh_rate=1
@@ -1022,26 +996,18 @@ ntrip_port=2101
 ntrip_cred=username:password
 ntrip_mountpoint=AUTO
 
-// Restart NTRIP if no data for this many seconds (0 to disable)
-ntrip_reboot_sec=240
-
 mqtt_addr=test.mosquitto.org
 mqtt_port=1883
 mqtt_username=username
 mqtt_password=password
 
-// Cellular settings (used when comm_type=1)
-cell_apn=internet
-cell_pap_username=user
-cell_pap_password=pass
-iotopmode=0
 </code></pre>
 <ul>
 <li>
 <p>Make sure <strong>there are no space before or after <code>=</code></strong></p>
 </li>
 <li>
-<p>If an option is not present in the file, its value defaults to <strong>0</strong> (for integers) or an <strong>empty string</strong> (for text)</p>
+<p>If an option is not present in the file, its value defaults to <strong>0</strong> or <strong>empty string</strong></p>
 </li>
 </ul>
 <h3 id="device_role">device_role</h3>
@@ -1234,7 +1200,7 @@ iotopmode=0
 <p>Used in <strong>rover mode</strong></p>
 </li>
 </ul>
-<h3 id="send_gga">send_gga</h3>
+<h3 id="send_gga"><code>send_gga</code></h3>
 <table>
 <thead>
 <tr>
@@ -1311,7 +1277,7 @@ base_z=687452.299
 <p>Used in <strong>Basestation mode</strong></p>
 </li>
 </ul>
-<h3 id="use_mqtt">use_mqtt</h3>
+<h3 id="use_mqtt"><code>use_mqtt</code></h3>
 <table>
 <thead>
 <tr>
@@ -1416,7 +1382,7 @@ base_z=687452.299
 <p>Optional</p>
 </li>
 </ul>
-<h3 id="log_sd">log_sd</h3>
+<h3 id="log_sd"><code>log_sd</code></h3>
 <table>
 <thead>
 <tr>
@@ -1434,7 +1400,7 @@ base_z=687452.299
 <ul>
 <li>Whether or not to save GNSS result to SD card</li>
 </ul>
-<h3 id="rover_rtcm">rover_rtcm</h3>
+<h3 id="rover_rtcm"><code>rover_rtcm</code></h3>
 <table>
 <thead>
 <tr>
@@ -1468,7 +1434,7 @@ base_z=687452.299
 </ul>
 </li>
 </ul>
-<h3 id="rover_refresh_rate">rover_refresh_rate</h3>
+<h3 id="rover_refresh_rate"><code>rover_refresh_rate</code></h3>
 <table>
 <thead>
 <tr>
@@ -1491,7 +1457,7 @@ base_z=687452.299
 <p>Valid values: <code>1</code>, <code>2</code>, <code>5</code>, <code>10</code>.</p>
 </li>
 </ul>
-<h3 id="ntrip_reboot_sec">ntrip_reboot_sec</h3>
+<h3 id="ntrip_reboot_sec"><code>ntrip_reboot_sec</code></h3>
 <table>
 <thead>
 <tr>
@@ -1517,7 +1483,7 @@ base_z=687452.299
 <p>Set to <code>0</code> to disable</p>
 </li>
 </ul>
-<h3 id="enable_imu">enable_imu</h3>
+<h3 id="enable_imu"><code>enable_imu</code></h3>
 <table>
 <thead>
 <tr>
@@ -1601,7 +1567,7 @@ base_z=687452.299
 <p>Optional, depends on carrier</p>
 </li>
 </ul>
-<h3 id="iotopmode">iotopmode</h3>
+<h3 id="iotopmode"><code>iotopmode</code></h3>
 <table>
 <thead>
 <tr>
@@ -1617,15 +1583,9 @@ base_z=687452.299
 </tbody>
 </table>
 <ul>
-<li>
-<p>0: LTE Cat M1</p>
-</li>
-<li>
-<p>1: NB-IoT</p>
-</li>
-<li>
-<p>2: Both</p>
-</li>
+<li>0: LTE Cat M1</li>
+<li>1: NB-IoT</li>
+<li>2: Both (Auto Select)</li>
 </ul>
 
 
