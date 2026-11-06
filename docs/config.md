@@ -8,7 +8,7 @@
 
 * Hold power button to switch on
 
-* On boot screen, **press any key**.
+* On boot screen, **press any button**.
 
 * A **USB drive** should show up on the computer
 
@@ -17,9 +17,8 @@
 All files are stored at the **root of the SD card**.
 
 * **Configuration File**: `gvl_config.txt`
-
-* **MQTT over TLS**: Put the server CA certificate as `mqtt.crt`
-
+* **MQTT over TLS**
+    * Put the server CA certificate as `mqtt.crt`
 	* Not needed for unencrypted MQTT
 
 ## Configuration Options
@@ -44,7 +43,6 @@ comm_type=0
 
 send_gga=1
 use_mqtt=1
-log_sd=0
 
 // Rover fix rate in Hz (1, 2, 5, or 10)
 rover_refresh_rate=1
@@ -54,24 +52,16 @@ ntrip_port=2101
 ntrip_cred=username:password
 ntrip_mountpoint=AUTO
 
-// Restart NTRIP if no data for this many seconds (0 to disable)
-ntrip_reboot_sec=240
-
 mqtt_addr=test.mosquitto.org
 mqtt_port=1883
 mqtt_username=username
 mqtt_password=password
 
-// Cellular settings (used when comm_type=1)
-cell_apn=internet
-cell_pap_username=user
-cell_pap_password=pass
-iotopmode=0
 ```
 
 * Make sure **there are no space before or after `=`**
 
-* If an option is not present in the file, its value defaults to **0** (for integers) or an **empty string** (for text)
+* If an option is not present in the file, its value defaults to **0** or **empty string**
 
 ### device_role
 
@@ -157,7 +147,7 @@ iotopmode=0
 
 * Used in **rover mode**
 
-### send_gga
+### `send_gga`
 
 |  Type  | Example |
 |:------:|---------|
@@ -196,7 +186,7 @@ base_z=687452.299
 
 * Used in **Basestation mode**
 
-### use_mqtt
+### `use_mqtt`
 
 |  Type  | Example |
 |:------:|---------|
@@ -242,7 +232,7 @@ base_z=687452.299
 
 * Optional
 
-### log_sd
+### `log_sd`
 
 |  Type  | Example |
 |:------:|---------|
@@ -250,7 +240,7 @@ base_z=687452.299
 
 * Whether or not to save GNSS result to SD card
 
-### rover_rtcm
+### `rover_rtcm`
 
 |  Type  | Example |
 |:------:|---------|
@@ -266,7 +256,7 @@ base_z=687452.299
 
     * 2: Enable RTCM output and save to SD card only (skips the network connection)
 
-### rover_refresh_rate
+### `rover_refresh_rate`
 
 |  Type  | Example |
 |:------:|---------|
@@ -276,7 +266,7 @@ base_z=687452.299
 
 * Valid values: `1`, `2`, `5`, `10`.
 
-### ntrip_reboot_sec
+### `ntrip_reboot_sec`
 
 |  Type  | Example |
 |:------:|---------|
@@ -288,7 +278,7 @@ base_z=687452.299
 
 * Set to `0` to disable
 
-### enable_imu
+### `enable_imu`
 
 |  Type  | Example |
 |:------:|---------|
@@ -328,15 +318,13 @@ These options apply when `comm_type=1` (Cellular).
 
 * Optional, depends on carrier
 
-### iotopmode
+### `iotopmode`
 
 |  Type  | Example |
 |:------:|---------|
 | Integer | `iotopmode=0` |
 
 * 0: LTE Cat M1
-
 * 1: NB-IoT
-
-* 2: Both
+* 2: Both (Auto Select)
 

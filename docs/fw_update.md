@@ -2,7 +2,7 @@
 
 * Plug the device into a computer
 
-* Immediately after powering on, **press any key** 
+* Immediately after powering on, **press any button** 
 
 * Device should show up as a **USB drive**
 
