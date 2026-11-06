@@ -487,9 +487,87 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enable_rtcm" class="md-nav__link">
+  <a href="#rover_rtcm" class="md-nav__link">
     <span class="md-ellipsis">
-      enable_rtcm
+      rover_rtcm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rover_refresh_rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      rover_refresh_rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntrip_reboot_sec" class="md-nav__link">
+    <span class="md-ellipsis">
+      ntrip_reboot_sec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable_imu" class="md-nav__link">
+    <span class="md-ellipsis">
+      enable_imu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cellular-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cellular Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cellular Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cell_apn" class="md-nav__link">
+    <span class="md-ellipsis">
+      cell_apn
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell_pap_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      cell_pap_username
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell_pap_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      cell_pap_password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iotopmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      iotopmode
     </span>
   </a>
   
@@ -778,9 +856,87 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enable_rtcm" class="md-nav__link">
+  <a href="#rover_rtcm" class="md-nav__link">
     <span class="md-ellipsis">
-      enable_rtcm
+      rover_rtcm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rover_refresh_rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      rover_refresh_rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntrip_reboot_sec" class="md-nav__link">
+    <span class="md-ellipsis">
+      ntrip_reboot_sec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable_imu" class="md-nav__link">
+    <span class="md-ellipsis">
+      enable_imu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cellular-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cellular Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cellular Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cell_apn" class="md-nav__link">
+    <span class="md-ellipsis">
+      cell_apn
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell_pap_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      cell_pap_username
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell_pap_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      cell_pap_password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iotopmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      iotopmode
     </span>
   </a>
   
@@ -808,13 +964,7 @@
 
 
 <h1 id="configuration">Configuration</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>Under construction, more details to come!</li>
-</ul>
-</div>
-<p><code>GVL Fix One</code> reads from <strong>configuration files</strong> at startup to determine what to do.</p>
+<p><code>GVL Fix One</code> reads from a <strong>configuration file</strong> at startup to determine what to do.</p>
 <h2 id="accessing-storage">Accessing Storage</h2>
 <ul>
 <li>
@@ -824,7 +974,7 @@
 <p>Hold power button to switch on</p>
 </li>
 <li>
-<p>On the boot screen, <strong>press any key</strong>.</p>
+<p>On boot screen, <strong>press any key</strong>.</p>
 </li>
 <li>
 <p>A <strong>USB drive</strong> should show up on the computer</p>
@@ -834,7 +984,7 @@
 <p>All files are stored at the <strong>root of the SD card</strong>.</p>
 <ul>
 <li>
-<p><strong>Configuration File</strong>: <code>gvl_config.txt</code> </p>
+<p><strong>Configuration File</strong>: <code>gvl_config.txt</code></p>
 </li>
 <li>
 <p><strong>MQTT over TLS</strong>: Put the server CA certificate as <code>mqtt.crt</code></p>
@@ -857,30 +1007,41 @@ wifi_pass=hunter2
 // 0: Rover, 1: Basestation
 device_role=0
 
-// 0: Wi-Fi, 1: Cellular, others: No Comm.
+// 0: Wi-Fi, 1: Cellular, 2: No Comm.
 comm_type=0
 
-// needed for some virtual mountpoints
 send_gga=1
 use_mqtt=1
 log_sd=0
+
+// Rover fix rate in Hz (1, 2, 5, or 10)
+rover_refresh_rate=1
 
 ntrip_addr=ntrip.data.gnss.ga.gov.au
 ntrip_port=2101
 ntrip_cred=username:password
 ntrip_mountpoint=AUTO
 
+// Restart NTRIP if no data for this many seconds (0 to disable)
+ntrip_reboot_sec=240
+
 mqtt_addr=test.mosquitto.org
 mqtt_port=1883
 mqtt_username=username
 mqtt_password=password
+
+// Cellular settings (used when comm_type=1)
+cell_apn=internet
+cell_pap_username=user
+cell_pap_password=pass
+iotopmode=0
 </code></pre>
 <ul>
 <li>
 <p>Make sure <strong>there are no space before or after <code>=</code></strong></p>
 </li>
 <li>
-<p>Omitted options are 0 (or empty string) by default</p>
+<p>If an option is not present in the file, its value defaults to <strong>0</strong> (for integers) or an <strong>empty string</strong> (for text)</p>
 </li>
 </ul>
 <h3 id="device_role">device_role</h3>
@@ -952,7 +1113,7 @@ mqtt_password=password
 <p>1: Use Cellular for network connection</p>
 </li>
 <li>
-<p>Any other: No comms, won't connect to networks.</p>
+<p>2: No comms, won't connect to networks.</p>
 </li>
 </ul>
 <h3 id="wifi_ssid"><code>wifi_ssid</code></h3>
@@ -1093,7 +1254,7 @@ mqtt_password=password
 <p>Whether or not to send NMEA GGA sentence to NTRIP server in rover mode</p>
 </li>
 <li>
-<p>Required by some NTRIP servers to select a suitable basestation</p>
+<p>Required by some NTRIP servers to select a suitable correction source</p>
 </li>
 </ul>
 <h3 id="base_password"><code>base_password</code></h3>
@@ -1273,7 +1434,7 @@ base_z=687452.299
 <ul>
 <li>Whether or not to save GNSS result to SD card</li>
 </ul>
-<h3 id="enable_rtcm">enable_rtcm</h3>
+<h3 id="rover_rtcm">rover_rtcm</h3>
 <table>
 <thead>
 <tr>
@@ -1284,19 +1445,186 @@ base_z=687452.299
 <tbody>
 <tr>
 <td style="text-align: center;">Integer</td>
-<td><code>enable_rtcm=0</code></td>
+<td><code>rover_rtcm=1</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>
-<p>Whether or not to enable RTCM MSM7 output in rover mode</p>
+<p>Enable RTCM MSM7 output in rover mode</p>
 </li>
 <li>
 <p>Useful for postprocessing</p>
+<ul>
+<li>
+<p>0: Disabled</p>
 </li>
 <li>
-<p>Under development</p>
+<p>1: Enable RTCM output and stream it to the NTRIP caster</p>
+</li>
+<li>
+<p>2: Enable RTCM output and save to SD card only (skips the network connection)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="rover_refresh_rate">rover_refresh_rate</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Integer</td>
+<td><code>rover_refresh_rate=1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Rover position fix rate in Hz</p>
+</li>
+<li>
+<p>Valid values: <code>1</code>, <code>2</code>, <code>5</code>, <code>10</code>.</p>
+</li>
+</ul>
+<h3 id="ntrip_reboot_sec">ntrip_reboot_sec</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Integer</td>
+<td><code>ntrip_reboot_sec=240</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Reboot device fi no NTRIP correction data is received for this many seconds</p>
+</li>
+<li>
+<p>Default: <code>240</code></p>
+</li>
+<li>
+<p>Set to <code>0</code> to disable</p>
+</li>
+</ul>
+<h3 id="enable_imu">enable_imu</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Integer</td>
+<td><code>enable_imu=1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Enable raw IMU output on the GNSS module</li>
+</ul>
+<h2 id="cellular-options">Cellular Options</h2>
+<p>These options apply when <code>comm_type=1</code> (Cellular).</p>
+<h3 id="cell_apn"><code>cell_apn</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">String</td>
+<td><code>cell_apn=internet</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Access Point Name (APN) for the cellular carrier</li>
+</ul>
+<h3 id="cell_pap_username"><code>cell_pap_username</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">String</td>
+<td><code>cell_pap_username=user</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>PAP username for the cellular connection</p>
+</li>
+<li>
+<p>Optional, depends on carrier</p>
+</li>
+</ul>
+<h3 id="cell_pap_password"><code>cell_pap_password</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">String</td>
+<td><code>cell_pap_password=pass</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>PAP password for the cellular connection</p>
+</li>
+<li>
+<p>Optional, depends on carrier</p>
+</li>
+</ul>
+<h3 id="iotopmode">iotopmode</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Integer</td>
+<td><code>iotopmode=0</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>0: LTE Cat M1</p>
+</li>
+<li>
+<p>1: NB-IoT</p>
+</li>
+<li>
+<p>2: Both</p>
 </li>
 </ul>
 
